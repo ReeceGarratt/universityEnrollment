@@ -73,22 +73,23 @@ public class AppTest {
         assertEquals(3, c1.getNumberOfCourses());
         assertEquals(3, c2.getNumberOfCourses());
 
-        // enroll and unenroll
+        // enroll
         assertTrue(c0.enrollStudent(s0));
         assertTrue(c0.enrollStudent(s1));
         assertTrue(c0.enrollStudent(s2));
         assertTrue(c0.enrollStudent(s3));
         assertFalse(c0.enrollStudent(s4));
 
+        // print enrolled students
+        assertEquals("Reece 10001, Nic 20002, Q 30003, Matthew 40004, ", c0.printCurrentEnrolled());
+
+        // unenroll
         assertFalse(c0.unenrollStudent(s4));
 
         assertTrue(c0.unenrollStudent(s0));
         assertTrue(c0.unenrollStudent(s1));
         assertTrue(c0.unenrollStudent(s2));
         assertTrue(c0.unenrollStudent(s3));
-
-        // print enrolled students
-        assertEquals("Reece 10001, Nic 20002, Q 30003, Matthew 40004, ", c0.printCurrentEnrolled());
     }
 
     @AfterEach
